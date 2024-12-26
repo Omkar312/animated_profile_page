@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Animated Profile Page',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.black,
+        scaffoldBackgroundColor: Colors.black,
       ),
       home: ProfilePage(),
     );
@@ -76,12 +77,12 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
             SizedBox(height: 20),
             Text(
               'John Doe',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
             ),
             SizedBox(height: 10),
             Text(
               'Flutter Developer',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Colors.grey[400]),
             ),
             SizedBox(height: 20),
             ElevatedButton(
@@ -89,6 +90,9 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                 // Add your action here
               },
               child: Text('Follow'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blueAccent, // Button color
+              ),
             ),
           ],
         ),
